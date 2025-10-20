@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+        #matrix {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #matrix-canvas {
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+        #boot-text {
+            white-space: pre;
+            line-height: 1.2;
+            text-wrap: wrap;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        .hidden {
+            display: none;
+        }
+        #navbar {
+            display: block;
+        }
+        #navbar div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 10px;
+        }
+        #redirects-btn {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            #navbar {
+                display: none;
+            }
+            #redirects-btn {
+                display: block;
+            }
+        }
+        @media (min-width: 601px) {
+            #navbar div {
+                flex-direction: row;
+            }
+            #navbar div > * {
+                flex: 1;
+                width: auto;
+            }
+            #back-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">        
+        <div id="matrix"><canvas id="matrix-canvas"></canvas></div>
+        <div id="file-manager" style="position: absolute; top: 20px; left: 20px; width: calc(100% - 60px); height: calc(100vh - 100px); background-color: rgba(0,0,0,0.8); color: #00ff00; font-family: monospace; padding: 10px; border: 0.1vw solid #00ff00; overflow-y: auto;">
+            <h2 style="margin: 0 0 10px 0;">File Manager - /MEMBERS/Batch 2023 - 2027</h2>
+            <pre style="margin: 0;">
+        <span class="desktop-only">total 61
+        drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">BALAJI R</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">BALA ABIRAMI K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">BALAJI V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 08:45 </span><a href="#" style="color: #00ff00; text-decoration: none;">BALAKUMARAN S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">BHARATHKUMAR L</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">BHARATHKUMAR N</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">BOOMIKA A</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">DARSHANA R</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">DHARSHINI J</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">DHARUN KASIRAJA P</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">DIVYARUBA M</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">ELAKKIYA D</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">ESHWAR P</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">GOPALAKRISHNAN S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">GOWTHAM K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">GOWTHAM R</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">GOWTHAM R</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">GOWTHAMAN M</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">GURU KARTHICK N S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">HAREESH N</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">HARIHARA SUDHAN K K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">INDHU V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">INDRAKUMAR V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">J RELIC OF RHOFL</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">JISHNU S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">KARTHIK A</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">KRISHNAKUMAR M</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">MAANUSRI R</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">MADHESH N</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">MADHUMITHA V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">MANJU SREE R</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">MANOJ S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">MRIDULA</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">NANDHINI T</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">NITHIN K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">PANDURANGA N</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">PARTHASARATHY V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">PAVITHRAA R J</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">PRAHATHI V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">PRAVEEN J</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">PRIYADHARSHINI M</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">RITHIKA K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SABARNA V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SAHANA S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SARAN D</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SHALINI N</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SHARU PRABA K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SHREE MATHI K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SHYAM R</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SOWMITHA P</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SUBHALAKSHMI K</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SURENDAR C</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SURIYA PRASATH S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SURYA E</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">SWETHA M</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">T VARSHAA MANOVA DIAMOND</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">THANAVARSHINI M G</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">THARANI M</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">THARANI V</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">VIBINDEV S</a>
+        <span class="desktop-only">drwxr-xr-x  2 user user 2023 Aug  28 09:00 </span><a href="#" style="color: #00ff00; text-decoration: none;">VISHNU RAJ M</a>
+        
+            </pre>
+            <style>
+                @media (max-width: 600px) {
+                    .desktop-only {
+                        display: none;
+                    }
+                }
+            </style>
+        </div>
+        <button id="redirects-btn" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #000; color: #00ff00; font-family: monospace; border-top: 1px solid #00ff00; z-index: 1000; height: 30px; line-height: 30px; text-align: center;">[REDIRECTS]</button>
+        <div id="navbar" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #000; color: #00ff00; font-family: monospace; border-top: 1px solid #00ff00; z-index: 1000;">
+            <div>
+                <button id="back-btn" style="color: #00ff00; background: none; border: none; font-family: monospace; margin: 5px; width: 100%; text-align: center; font-size: 14px; height: 30px; line-height: 30px; cursor: pointer;">[BACK]</button>
+                <a href="#" style="color: #00ff00; text-decoration: none; margin: 5px; width: 100%; text-align: center; font-size: 14px; height: 30px; line-height: 30px;">[HOME]</a>
+                <a href="#" style="color: #00ff00; text-decoration: none; margin: 5px; width: 100%; text-align: center; font-size: 14px; height: 30px; line-height: 30px;">[ABOUT]</a>
+                <a href="#" style="color: #00ff00; text-decoration: none; margin: 5px; width: 100%; text-align: center; font-size: 14px; height: 30px; line-height: 30px;">[PROJECTS]</a>
+                <a href="#" style="color: #00ff00; text-decoration: none; margin: 5px; width: 100%; text-align: center; font-size: 14px; height: 30px; line-height: 30px;">[MEMBERS]</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Matrix background effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        const matrixArray = matrixChars.split("");
+        const fontSize = 15;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = [];
+
+        for (let x = 0; x < columns; x++) {
+            drops[x] = Math.floor(Math.random() * canvas.height / fontSize);
+        }
+
+        function drawMatrix() {
+            // This line controls the fade opacity (trail effect) - lower value = slower fade
+            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0f0";
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+            const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+            }
+        }
+
+        setInterval(drawMatrix, 35);
+
+        document.getElementById('redirects-btn').addEventListener('click', function() {
+            const navbar = document.getElementById('navbar');
+            navbar.style.display = 'block';
+            this.style.display = 'none';
+        });
+        document.getElementById('back-btn').addEventListener('click', function() {
+            const navbar = document.getElementById('navbar');
+            const redirectsBtn = document.getElementById('redirects-btn');
+            navbar.style.display = '';
+            redirectsBtn.style.display = '';
+        });
+    </script>
+</html>
