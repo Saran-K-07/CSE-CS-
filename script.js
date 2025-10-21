@@ -47,10 +47,10 @@ document.getElementById('back-btn').addEventListener('click', function() {
 });
 
 // Check if the animation has already been shown
-        if (localStorage.getItem('animationShown') === 'true') {
+        /*if (localStorage.getItem('animationShown') === 'true') {
             // Skip animation and show main content directly
             document.getElementById('main-content').classList.remove('hidden');
-        } else {
+        } else {*/
             const bootMessages = [
                 "Linux version 5.15.0-91-generic (buildd@lcy02-amd64-105) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #101-Ubuntu SMP Tue Nov 14 13:30:27 UTC 2023\n",
                 "Command line: BOOT_IMAGE=/boot/vmlinuz-5.15.0-91-generic root=UUID=12345678-1234-1234-1234-123456789abc ro quiet splash\n",
@@ -95,4 +95,4 @@ document.getElementById('back-btn').addEventListener('click', function() {
             }
 
             displayNextLine();
-        }
+        //}
