@@ -46,18 +46,6 @@ document.getElementById('back-btn').addEventListener('click', function() {
     redirectsBtn.style.display = '';
 });
 
-// Opening animation for content
-document.addEventListener('DOMContentLoaded', function() {
-    const mainContent = document.getElementById('main-content');
-    if (mainContent && !mainContent.classList.contains('hidden')) {
-        mainContent.style.opacity = '0';
-        mainContent.style.transition = 'opacity 2s ease-in-out';
-        setTimeout(() => {
-            mainContent.style.opacity = '1';
-        }, 500);
-    }
-});
-
 // Check if the animation has already been shown
         if (localStorage.getItem('animationShown') === 'true') {
             // Skip animation and show main content directly
